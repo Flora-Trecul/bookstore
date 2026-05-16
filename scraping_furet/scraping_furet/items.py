@@ -5,8 +5,10 @@
 
 import scrapy
 
-
-class ScrapingFuretItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class CategoryItem(scrapy.Item):
+    category_id = scrapy.Field()
+    category_name = scrapy.Field()
+    category_url = scrapy.Field()
+    category_parent = scrapy.Field()
+    is_books_list = scrapy.Field()
+    books_count = scrapy.Field()

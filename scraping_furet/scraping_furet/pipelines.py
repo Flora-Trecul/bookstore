@@ -8,6 +8,14 @@
 from itemadapter import ItemAdapter
 
 
-class ScrapingFuretPipeline:
+class CategoriesPipeline:
+
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+
+        count_string = adapter.get("books_count")
+        if count_string != 0:
+            count_value = count_string.split(" ")[0].replace("(", "")
+            adapter["books_count"] = int(count_value)
+        
         return item

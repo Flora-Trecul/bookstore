@@ -60,9 +60,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "scraping_furet.pipelines.ScrapingFuretPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "scraping_furet.pipelines.CategoriesPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -87,3 +87,14 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
+
+FEED_EXPORT_FIELDS = [
+    'category_id',
+    'category_name',
+    'category_url',
+    'category_parent',
+    'is_books_list',
+    'books_count'
+]
+
+# DUPEFILTER_DEBUG = True
