@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Scraping data files
+scraping_furet/*.csv
+scraping_furet/*.json
